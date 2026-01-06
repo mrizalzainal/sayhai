@@ -1,84 +1,137 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Untuk Kamu ❤️</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
-            font-family: 'Segoe UI', sans-serif;
-            color: white;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<title>Untuk Kamu 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
 
-        .card {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            max-width: 400px;
-        }
+    .card {
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+        text-align: center;
+        max-width: 350px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        z-index: 2;
+    }
 
-        h1 {
-            margin-bottom: 10px;
-        }
+    h1 {
+        color: #ff4d6d;
+        margin-bottom: 10px;
+    }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
+    p {
+        color: #555;
+        font-size: 16px;
+    }
 
-        button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            font-size: 16px;
-            border: none;
-            border-radius: 30px;
-            background: #ff4d6d;
-            color: white;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    .buttons {
+        margin-top: 25px;
+    }
 
-        button:hover {
-            background: #ff1e4d;
-            transform: scale(1.05);
-        }
+    button {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-        .love {
-            display: none;
-            font-size: 22px;
-            margin-top: 20px;
+    .yes {
+        background: #ff4d6d;
+        color: white;
+        margin-right: 10px;
+    }
+
+    .no {
+        background: #ddd;
+        color: #333;
+        position: absolute;
+    }
+
+    .yes:hover {
+        transform: scale(1.1);
+    }
+
+    .message {
+        display: none;
+        margin-top: 20px;
+        font-size: 18px;
+        color: #ff4d6d;
+        font-weight: bold;
+    }
+
+    .heart {
+        position: absolute;
+        color: rgba(255,255,255,0.8);
+        font-size: 20px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        from {
+            transform: translateY(-10vh);
         }
-    </style>
+        to {
+            transform: translateY(110vh);
+        }
+    }
+</style>
 </head>
 <body>
 
 <div class="card">
-    <h1>Hallo Bening Lestari ❤️</h1>
+    <h1>Hai Bening Lestari 💕</h1>
     <p>
-        Sejak kenal kamu, hari-hariku jadi lebih berwarna.<br>
-        Jangan Lupain aku ya wkwkw.
+        Aku nggak jago kata-kata,<br>
+        tapi satu hal yang pasti…<br><br>
+        <b>Aku sayang kamu 😳</b><br>
+        Kamu Sayang aku Gak?
     </p>
 
-    <button onclick="showLove()">Klik di sini 💕</button>
+    <div class="buttons">
+        <button class="yes" onclick="accept()">Iya ❤️</button>
+        <button class="no" id="noBtn" onmouseover="moveNo()">Nggak 😝</button>
+    </div>
 
-    <div class="love" id="love">
-        Aku sayang kamu 💖<br>
-        HEHEHE
+    <div class="message" id="message">
+        YEAYY 💖💖💖<br>
+        Akhirnya di sayang aku wkwkw 😊
     </div>
 </div>
 
 <script>
-    function showLove() {
-        document.getElementById("love").style.display = "block";
-    }
+function accept() {
+    document.getElementById("message").style.display = "block";
+}
+
+function moveNo() {
+    const btn = document.getElementById("noBtn");
+    btn.style.left = Math.random() * 80 + "vw";
+    btn.style.top = Math.random() * 80 + "vh";
+}
+
+// hearts animation
+for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+}
 </script>
 
 </body>
