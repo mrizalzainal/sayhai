@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Untuk Kamu ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            background: #ff4d6d;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff1e4d;
+            transform: scale(1.05);
+        }
+
+        .love {
+            display: none;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Hallo Bening Lestari ❤️</h1>
+    <p>
+        Sejak kenal kamu, hari-hariku jadi lebih berwarna.<br>
+        Jangan Lupain aku ya wkwkw.
+    </p>
+
+    <button onclick="showLove()">Klik di sini 💕</button>
+
+    <div class="love" id="love">
+        Aku sayang kamu 💖<br>
+        HEHEHE
+    </div>
+</div>
+
+<script>
+    function showLove() {
+        document.getElementById("love").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
